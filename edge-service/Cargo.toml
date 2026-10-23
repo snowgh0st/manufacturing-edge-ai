@@ -1,0 +1,25 @@
+[package]
+name = "edge-service"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Async runtime & HTTP framework
+tokio = { version = "1.38", features = ["full"] }
+axum = { version = "0.7", features = ["ws"] }
+tower-http = { version = "0.5", features = ["cors", "trace"] }
+
+# Serialization & JSON
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Telemetry & Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# MQTT Client & ONNX Runtime
+rumqttc = "0.24"
+ort = "2.0.0-rc.9"
+
+# MongoDB Driver
+mongodb = "2.8"
